@@ -3,19 +3,19 @@ public:
     int totalFruit(vector<int>& fruits) {
         int n = fruits.size();
         unordered_map<int, int> count;
-        int left = 0;
-        int maxLen = 0;
-        for (int right = 0; right < n; right++) {
-            count[fruits[right]]++;
-            while (count.size() > 2) {
-                count[fruits[left]]--;
-                if (count[fruits[left]] == 0) {
-                    count.erase(fruits[left]);
+        int lp =0, rp =0 ,maxlen=0;
+        for(int rp=0;rp<n;rp++){
+            count[fruits[rp]]++;
+
+            while (count.size()>2){
+                count[fruits[lp]]--;
+                if (count[fruits[lp]]==0){
+                    count.erase(fruits[lp]);
                 }
-                left++;
+                lp++;
             }
-            maxLen = max(maxLen, right - left + 1);
+            maxlen=max(maxlen,rp-lp+1);
         }
-        return maxLen;
+        return maxlen;
     }
 };

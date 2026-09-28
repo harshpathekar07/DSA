@@ -1,17 +1,15 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        int n = nums.size();
-        if(n==0){
-            return 0;
-        }
-        int count = 0;
-        for (int i = 1 ; i<n; i++){
-            if (nums[i]!=nums[count]){
-                count++;
-                nums[count]=nums[i];
+        unordered_map<int, int> freq;
+        int index = 0;
+        for (int num : nums) {
+            if (freq[num] == 0) {      
+                freq[num] = 1;         
+                nums[index] = num;
+                index++;
             }
         }
-        return count+1;
+        return index;
     }
 };

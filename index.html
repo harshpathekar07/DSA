@@ -31,29 +31,43 @@
             width: 100%;
         }
 
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2em;
+        }
+
         button {
             background-color: #A476FF; /* Purple */
             color: #101010;
             border: none;
-            padding: 10px 20px;
+            padding: 15px 30px;
             font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
             border-radius: 5px;
-            margin-top: 20px;
+            transition: opacity 0.2s;
         }
 
         button:active {
-            background-color: #DFDFDF;
+            opacity: 0.8;
+            transform: scale(0.98);
         }
 
         button:hover {
-            opacity: 0.8;
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Plain home page with no header and no footer -->
+        <h1>Welcome</h1>
+        <p>This is a plain home page.</p>
+        <button>Click Me</button>
     </div>
 </body>
 </html>
